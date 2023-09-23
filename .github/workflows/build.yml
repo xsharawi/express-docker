@@ -48,4 +48,5 @@ jobs:
       env:
         DB_PASSWORD: ${{secrets.DB_PASSWORD}}
     - name: debug
+
       run: docker compose logs
