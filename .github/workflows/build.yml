@@ -31,3 +31,7 @@ jobs:
 
     - name: Build the Docker image
       run: docker build . --tag ghcr.io/${{ github.actor }}/express-docker:$(date +%s)
+
+
+    - name: publish image
+      run: docker push ghcr.io/${{ github.actor }}/express-docker:$(date +%s)
