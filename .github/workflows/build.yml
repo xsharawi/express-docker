@@ -45,6 +45,7 @@ jobs:
         ssh-private-key: ${{ secrets.DOCKERDEP }}
     - name: deploy
       run: docker compose -f docker-compose-prod.yml up -d
+      env:
+        DB_PASSWORD: ${{secrets.DB_PASSWORD}}
     - name: debug
-      if: always()
       run: docker compose logs
